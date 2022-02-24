@@ -43,6 +43,11 @@ const Product = () => {
         setchildren(children - 1);
     };
 
+    const NumStyle = {
+        width: "70px",
+        display: " inline-block"
+    }
+
     return (
         <>
             <h1>Room Booking</h1>
@@ -52,7 +57,9 @@ const Product = () => {
                         ROOMS
                         <span className=" bg-light ">
                             <button className="btn btn-primary mx-3" onClick={reduceHandle} disabled={room <= 1}>-</button>
-                            <span className="mx-3">{room}</span>
+                            <div style={NumStyle}>
+                                <span className="mx-3">{room}</span>
+                            </div>
                             <button className="btn btn-danger mx-3" onClick={addHandle} disabled={room >= 5}>+</button>
                         </span>
                     </li>
@@ -60,7 +67,9 @@ const Product = () => {
                         ADULTS
                         <span className=" bg-light">
                             <button className="btn btn-primary mx-3" onClick={reducePerson} disabled={person <= 1}>-</button>
-                            <span className="mx-3">{person}</span>
+                            <div style={NumStyle}>
+                                <span className="mx-3">{person}</span>
+                            </div>
                             <button className="btn btn-danger mx-3" onClick={addPerson} disabled={person >= 20}>+</button>
                         </span>
                     </li>
@@ -68,7 +77,9 @@ const Product = () => {
                         CHILDREN
                         <span className="bg-light">
                             <button className="btn btn-primary mx-3" onClick={reduceChild} disabled={children <= 0}>-</button>
-                            <span className="mx-3">{children}</span>
+                            <div style={NumStyle}>
+                                <span className="mx-3">{children}</span>
+                            </div>
                             <button className="btn btn-danger mx-3" onClick={addChild}>+</button>
                         </span>
                     </li>
